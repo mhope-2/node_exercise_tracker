@@ -100,12 +100,12 @@ exports.loginUser = (req, res, next) => {
         }
         else{
           req.flash("error_msg", "Wrong Password");
-          res.redirect('/videotube/admin');
+          res.redirect('/');
         }
       });
     } else {
       req.flash("error_msg","User does not exist");
-      res.redirect('/videotube/admin');
+      res.redirect('/');
     }
   });
 };
@@ -156,7 +156,7 @@ exports.logout = (req, res, next) => {
       expires: new Date(Date.now() + 604800),
       httpOnly: true,
     });
-  res.redirect('/videotube/admin');
+  res.redirect('/');
 };
 
 const accessToken = (payload) => {
