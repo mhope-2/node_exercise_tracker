@@ -14,11 +14,7 @@ AdminBro.registerAdapter(AdminBroMongoose)
 
 
 const run = async () => {
-  const connection = await mongoose.connect('mongodb+srv://mhope:mhope@cluster1.330al.mongodb.net/cluster1_db?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  }).then(()=>{
+  const connection = await mongoose.connect('mongodb+srv://mhope:mhope@cluster1.330al.mongodb.net/cluster1_db?retryWrites=true&w=majority').then(()=>{
     console.log(`MongoDB database connection established Successfully`);
     }).catch((error)=>{
         console.log("MongoDB not connected");
