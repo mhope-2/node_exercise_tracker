@@ -9,9 +9,9 @@
   "author": "Michael Hope",
   "license": "ISC",
   "dependencies": {
-    "@admin-bro/express": "^3.1.0",
-    "@admin-bro/mongoose": "^1.1.0",
-    "admin-bro": "^4.0.1",
+    "@adminjs/express": "^5.1.0",
+    "@adminjs/mongoose": "^3.0.3",
+    "adminjs": "6.0.6",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "connect-flash": "^0.1.1",
@@ -23,13 +23,22 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.18.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^8.19.0",
+    "mongoose": "^8.24.1",
     "morgan": "^1.10.0",
     "promisify": "0.0.3"
   },
   "overrides": {
-    "axios": "^1.17.0",
-    "quill": "^2.0.3",
-    "serialize-javascript": "^7.0.5"
+    "axios": "^1.18.0",
+    "body-parser": "^1.20.6",
+    "brace-expansion": "^2.1.4",
+    "fast-uri": "^3.1.5",
+    "i18next-http-backend": "^4.0.0",
+    "immutable": "^4.3.9",
+    "linkify-it": "^5.0.2",
+    "@tiptap/extension-link": "^3.0.0",
+    "serialize-javascript": "^7.0.5",
+    "tinymce": "^8.6.0",
+    "uuid": "^11.1.1",
+    "esbuild": "^0.28.1"
   }
 }
