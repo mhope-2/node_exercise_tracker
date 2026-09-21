@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@adminjs/express": "^5.1.0",
-    "@adminjs/mongoose": "^3.0.3",
+    "@adminjs/mongoose": "^4.1.0",
     "adminjs": "6.0.6",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
