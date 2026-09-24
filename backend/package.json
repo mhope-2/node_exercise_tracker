@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "@adminjs/express": "^6.1.1",
-    "@adminjs/mongoose": "^3.0.3",
-    "adminjs": "6.0.6",
+    "@adminjs/mongoose": "^4.1.0",
+    "adminjs": "^7.8.17",
     "bcryptjs": "^3.0.3",
     "colors": "^1.4.0",
     "connect-flash": "^0.1.1",
@@ -35,10 +35,13 @@
     "i18next-http-backend": "^4.0.0",
     "immutable": "^4.3.9",
     "linkify-it": "^5.0.2",
-    "@tiptap/extension-link": "^3.0.0",
     "serialize-javascript": "^7.0.5",
     "tinymce": "^8.6.0",
     "uuid": "^11.1.1",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.1",
+    "react-router": "^7.18.4",
+    "react-router-dom": "^7.18.4",
+    "@tiptap/core": "^3.31.3",
+    "@tiptap/extension-link": "^3.0.0"
   }
 }
