@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   auto-merge-patch:
-    name: Enable patch auto-merge
+    name: Enable auto-merge
     if: >-
       github.event.pull_request.user.login == 'dependabot[bot]' &&
       github.event.pull_request.base.ref == 'master' &&
@@ -26,10 +26,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Auto-merge only patch updates. Minor and major updates, including
-      # security fixes that require them, remain available for review.
+      # Auto-merge patch and minor updates, including security fixes of that
+      # size; GitHub merges once the required CI checks pass. Major updates
+      # remain for review.
       - name: Enable auto-merge
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        if: >-
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

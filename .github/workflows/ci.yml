@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - master
+  schedule:
+    # Weekly audit, so new advisories against the current lockfiles show up
+    # even when no PR is open.
+    - cron: "23 5 * * 1"
 
 permissions:
   contents: read
@@ -63,6 +67,28 @@ jobs:
         shell: bash
         run: |
           find . -path './node_modules' -prune -o -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory: [".", "backend"]
+    defaults:
+      run:
+        working-directory: ${{ matrix.directory }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 20
+
+      - name: Audit installed dependencies
+        run: npm audit --audit-level=moderate
 
   dependency-review:
     name: Dependency review
