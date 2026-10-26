@@ -11,7 +11,7 @@
   "dependencies": {
     "@adminjs/express": "^6.1.1",
     "@adminjs/mongoose": "^3.0.3",
-    "adminjs": "6.0.6",
+    "adminjs": "7.8.17",
     "bcryptjs": "^3.0.3",
     "colors": "^1.4.0",
     "connect-flash": "^0.1.1",
@@ -29,7 +29,7 @@
   },
   "overrides": {
     "axios": "^1.20.0",
-    "body-parser": "^1.20.6",
+    "body-parser": "^1.20.9",
     "brace-expansion": "^2.1.4",
     "fast-uri": "^3.1.5",
     "i18next-http-backend": "^4.0.0",
